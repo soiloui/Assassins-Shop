@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+$col-one: #2e2e2e;
+$col-two: #da2127;
+$col-three: rgba($col-one, 0.2);
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	color: $col-one;
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.4;
+	overflow-x: hidden;
+
+	header,
+	main,
+	.footer__content {
+		padding: 0 2em;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+.text-upper {
+	text-transform: uppercase;
+}
+
+ul {
+	list-style: none;
+}
+a {
+	display: block;
+	color: inherit;
+	text-decoration: none;
+}
+img {
+	max-width: 100%;
+	object-fit: cover;
+}
+
+.prim-link {
+	color: $col-two;
+
+	transition: transform 0.14s ease-out;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+.prim-button {
+	position: relative;
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-size: 0.8rem;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		background-position-y: 250px;
+		background-position-x: -100px;
+		background-image: url('../assets/main/button_layer.png');
+		z-index: -1;
+
+		transition: 0.25s all ease-out;
+	}
+
+	&:hover {
+		&::after {
+			background-position-x: -155px;
+		}
+	}
+}
+.prim-button__link {
+	padding: 1em;
+
+	font-weight: 700;
+	color: #fff;
+}
+
+.text-bold {
+	font-weight: 700;
+}
+
+.feature {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	margin-bottom: 0.4em;
+
+	i {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		margin-right: 1em;
+	}
+}
+
+.section-name {
+	display: flex;
+
+	&::before {
+		content: url('../assets/main/section_name_pointer.png');
+		margin-right: 0.7em;
+	}
+}
