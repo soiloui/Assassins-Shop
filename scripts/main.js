@@ -12,6 +12,9 @@ const basket_DIV = document.querySelector('.basket');
 const previewThumbnails_LI = document.querySelectorAll('.preview__item');
 const colorThumbnails_LI = document.querySelectorAll('.color__item');
 
+const amountOfProduct_DIV = document.querySelector('.buying__count-container');
+const amountOfProduct_P = document.querySelector('.buying__count-number');
+
 const faqQuestions_DIV = document.querySelectorAll('.faq-quesiton__question');
 
 // ---------- SHOW CATEGORIES -------------
@@ -70,6 +73,18 @@ colorThumbnails_LI.forEach((item) => {
 		});
 		item.classList.add('color__item--active');
 	});
+});
+
+amountOfProduct_DIV.firstElementChild.addEventListener('click', () => {
+	let productAmount = parseInt(amountOfProduct_P.innerText);
+	if (productAmount > 1) {
+		amountOfProduct_P.innerHTML = productAmount - 1;
+	}
+});
+amountOfProduct_DIV.lastElementChild.addEventListener('click', () => {
+	let productAmount = parseInt(amountOfProduct_P.innerText);
+	console.log(productAmount);
+	amountOfProduct_P.innerHTML = productAmount + 1;
 });
 
 // ---------- SHOW FAQ QUESTION -------------

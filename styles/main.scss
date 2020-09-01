@@ -547,6 +547,12 @@ html {
 	& > :nth-child(n) {
 		padding: 0.5em 0.8em;
 	}
+
+	& > :nth-child(1),
+	& > :nth-last-child(1) {
+		cursor: pointer;
+		user-select: none;
+	}
 }
 
 // Less price
